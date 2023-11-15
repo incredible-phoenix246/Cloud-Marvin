@@ -12,14 +12,14 @@ const HeroSection = () => {
       {/* Content */}
       <div className="mx-auto text-white lg:ml-[100px] lg:text-left text-left relative z-10 ml-8 mr-8">
         <h3 className="lg:text-2xl text-lg font-bold">
-          CLOUD MAVIN'S <br /> <span>CYBER ACADEMY</span>
+          CLOUD MAVIN&rsquo;S <br /> <span>CYBER ACADEMY</span>
         </h3>
 
-        <h1 className="lg:text-6xl text-3xl font-bold lg:mt-10 lg:mb-4 text-left mt-4 mb-4">
+        <h1 className="lg:text-6xl text-3xl font-bold lg:mt-[50px] lg:mb-4 text-left mt-4 mb-4">
           Top-notch <span className="block">Cyber Security Education</span>
         </h1>
 
-        <p className="lg:text-lg text-left mb-8">
+        <p className="lg:text-xl text-left mb-8">
           Welcome to our cybersecurity academy, where we empower beginners
           <br className="hidden lg:inline" /> with essential skills to protect
           digital landscapes and combat online
