@@ -1,0 +1,50 @@
+import React, { ButtonHTMLAttributes, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary';
+  destination: string;
+}
+
+const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'primary', destination, className, ...props }) => {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    setIsLoading(true);
+    router.push(destination);
+  };
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsLoading(false);
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router]);
+
+  const buttonClass = variant === 'secondary' ? 'bg-gray-500 text-white' : 'bg-blue-500 text-white';
+
+  return (
+    <button
+      className={`relative px-4 py-2 rounded ${buttonClass} ${className}`}
+      onClick={handleClick}
+      disabled={isLoading}
+      {...props}
+    >
+      {isLoading && (
+        <div className="absolute top-0 left-0 w-full h-1 bg-yellow-500 transition-transform transform translate-y-full"></div>
+      )}
+      {props.children}
+    </button>
+  );
+};
+
+export default CustomButton;
+
+
+
