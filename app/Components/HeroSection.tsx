@@ -8,8 +8,6 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/Image-1.png')", opacity: 0.5 }}
       />
-
-      {/* Content */}
       <div className="mx-auto text-white lg:ml-[100px] lg:text-left text-left relative z-10 ml-8 mr-8">
         <h3 className="lg:text-2xl text-lg font-bold">
           CLOUD MAVIN&rsquo;S <br /> <span>CYBER ACADEMY</span>
@@ -34,6 +32,7 @@ const HeroSection = () => {
           Learn More
         </Button>
       </div>
+  
     </section>
   );
 };
